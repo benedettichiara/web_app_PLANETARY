@@ -16,6 +16,8 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 import rioxarray
 
+# STREAMLIT definire componenti per dati di input
+# DEFINIRE CHIAMATE: era5 e sentinel
 
 def calculate_djf_sum(data_array):
     # Create a new 'year' coordinate for grouping, shifting December to the next year
@@ -31,8 +33,6 @@ def calculate_djf_sum(data_array):
     djf_sum = djf_data.groupby('djf_year').sum(dim="time")
 
     return djf_sum
-
-
 
 def round_coordinates(coord, interval=0.25):
     """Rounds the coordinates to the nearest grid point."""
@@ -85,6 +85,7 @@ def convert_to_netcdf(data_era5):
     return filepath
 from datetime import datetime
 
+# FUNZIONE CHIAMATA A SENTINEL
 def fetch_and_map_sentinel2(location, start_date, end_date):
     """
     Fetches the most recent Sentinel-2 image from Planetary Computer for a specified bounding box
