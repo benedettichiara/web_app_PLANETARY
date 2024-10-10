@@ -56,3 +56,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# fino a qua Siamo in grado di raccogliere l’input dell’utente
